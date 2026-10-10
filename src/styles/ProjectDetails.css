@@ -1,0 +1,310 @@
+/* ==========================================================================
+   Project Details Page Styles
+   ========================================================================== */
+
+.project-details-page {
+  max-width: 1040px;
+  margin: 0 auto;
+  padding: clamp(2rem, 4vw, 3.5rem) clamp(1rem, 4vw, 3rem) 6rem;
+  box-sizing: border-box;
+}
+
+/* Back Link */
+.back-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.5rem 1rem;
+  border-radius: 999px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--ink);
+  text-decoration: none;
+  background: rgba(17, 17, 17, 0.05);
+  border: 1px solid var(--border-light);
+  margin-bottom: 2.5rem;
+  transition: background-color 0.2s ease, transform 0.15s ease;
+}
+
+.back-link:hover {
+  background: rgba(17, 17, 17, 0.1);
+  transform: translateX(-3px);
+}
+
+/* Hero Header */
+.details-hero {
+  border-bottom: 2px solid var(--ink);
+  padding-bottom: 3rem;
+  margin-bottom: 3rem;
+}
+
+.details-meta-bar {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+  margin-bottom: 1.5rem;
+}
+
+.details-icon {
+  width: 52px;
+  height: 52px;
+  border-radius: 1.25rem;
+  background: var(--ink);
+  color: var(--paper);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.75rem;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.12);
+}
+
+.details-pill {
+  padding: 0.35rem 0.85rem;
+  border-radius: 999px;
+  font-size: 0.82rem;
+  font-weight: 600;
+  background: rgba(17, 17, 17, 0.05);
+  border: 1px solid var(--border-light);
+  color: var(--ink);
+}
+
+.details-heading {
+  margin: 0 0 1rem;
+  font-size: clamp(2.5rem, 6vw, 4.25rem);
+  font-weight: 800;
+  line-height: 1.05;
+  letter-spacing: -0.04em;
+  color: var(--ink);
+}
+
+.details-tagline {
+  margin: 0 0 2rem;
+  font-size: clamp(1.2rem, 2.5vw, 1.5rem);
+  font-weight: 600;
+  line-height: 1.4;
+  color: var(--ink-muted);
+}
+
+/* Actions Row */
+.details-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-bottom: 2.5rem;
+}
+
+/* Metrics Section */
+.details-metrics {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 1rem;
+  margin-top: 2rem;
+}
+
+.metric-card {
+  background: rgba(17, 17, 17, 0.04);
+  border: 1px solid var(--border-light);
+  border-radius: 1rem;
+  padding: 1.25rem;
+  text-align: left;
+}
+
+.metric-value {
+  font-size: 1.75rem;
+  font-weight: 800;
+  letter-spacing: -0.03em;
+  color: var(--ink);
+  margin-bottom: 0.25rem;
+}
+
+.metric-label {
+  font-size: 0.82rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: var(--ink-muted);
+}
+
+/* Sections Grid */
+.details-body {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: clamp(2rem, 5vw, 4rem);
+}
+
+.details-main-section {
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+}
+
+.details-block h2 {
+  font-size: 1.6rem;
+  font-weight: 800;
+  letter-spacing: -0.03em;
+  margin: 0 0 1rem;
+  color: var(--ink);
+}
+
+.details-block p {
+  font-size: 1.05rem;
+  line-height: 1.75;
+  color: var(--ink);
+  margin: 0 0 1.25rem;
+}
+
+/* Features List */
+.features-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.85rem;
+}
+
+.feature-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.75rem;
+  font-size: 1.02rem;
+  line-height: 1.6;
+}
+
+.feature-check {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  background: var(--ink);
+  color: var(--paper);
+  font-size: 0.75rem;
+  font-weight: 800;
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+/* Sidebar Details */
+.details-sidebar {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.sidebar-box {
+  background: var(--paper);
+  border: 2px solid var(--ink);
+  border-radius: 1.25rem;
+  padding: 1.5rem;
+}
+
+.sidebar-box h3 {
+  font-size: 1.1rem;
+  font-weight: 800;
+  margin: 0 0 1rem;
+  color: var(--ink);
+}
+
+.sidebar-info-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.85rem;
+}
+
+.sidebar-info-row {
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+  font-size: 0.9rem;
+}
+
+.sidebar-label {
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--ink-muted);
+}
+
+.sidebar-val {
+  font-weight: 600;
+  color: var(--ink);
+}
+
+/* Tech Pills in Sidebar */
+.tech-pills-wrap {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.45rem;
+}
+
+.tech-pill-lg {
+  padding: 0.35rem 0.75rem;
+  background: var(--ink);
+  color: var(--paper);
+  border-radius: 999px;
+  font-size: 0.82rem;
+  font-weight: 600;
+}
+
+/* Footer Navigation */
+.details-footer-nav {
+  margin-top: 5rem;
+  padding-top: 2.5rem;
+  border-top: 2px solid var(--ink);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+}
+
+/* Not Found Page State */
+.not-found-container {
+  max-width: 600px;
+  margin: 4rem auto;
+  text-align: center;
+  padding: 3rem 1.5rem;
+}
+
+.not-found-container h1 {
+  font-size: 2.5rem;
+  font-weight: 800;
+  margin: 0 0 1rem;
+}
+
+.not-found-container p {
+  color: var(--ink-muted);
+  font-size: 1.1rem;
+  margin-bottom: 2rem;
+}
+
+/* Responsive */
+@media (max-width: 860px) {
+  .details-body {
+    grid-template-columns: 1fr;
+  }
+
+  .details-sidebar {
+    order: -1;
+  }
+}
+
+@media (max-width: 600px) {
+  .project-details-page {
+    padding: 1.5rem 1.25rem 4rem;
+  }
+
+  .details-actions {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .details-actions .btn {
+    width: 100%;
+    justify-content: center;
+  }
+}
