@@ -15,15 +15,27 @@ const stack = [
 ]
 
 const groups = [
-
     {
         title: 'Tools',
         tone: 'dark',
         items: ['Postman', 'Git', 'GitHub', 'Docker', 'VS Code', 'Linux', 'CI/CD'],
     },
     {
-        title: 'Methods',
+        title: 'Cloud & DB',
         tone: 'light',
+        items: [
+            'PostgreSQL',
+            'MongoDB',
+            'Redis',
+            'AWS',
+            'GraphQL',
+            'Prisma',
+            'Supabase',
+        ],
+    },
+    {
+        title: 'Methods',
+        tone: 'dark',
         items: [
             'SOLID',
             'Clean Architecture',
@@ -36,7 +48,7 @@ const groups = [
     },
     {
         title: 'Soft skills',
-        tone: 'dark',
+        tone: 'light',
         items: [
             'Communication',
             'Teamwork',

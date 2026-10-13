@@ -4,6 +4,8 @@ import '../styles/Projects.css'
 
 export default function Projects() {
   const navigate = useNavigate()
+  // Show the last added project first
+  const displayedProjects = [...projects].reverse()
 
   return (
     <div className="projects-page">
@@ -21,7 +23,7 @@ export default function Projects() {
 
       {/* Projects Grid */}
       <div className="projects-grid">
-        {projects.map((project) => (
+        {displayedProjects.map((project) => (
           <article
             key={project.id}
             className="project-card"
@@ -42,6 +44,14 @@ export default function Projects() {
                 {project.icon}
               </div>
               <div className="card-meta">
+                <span
+                  className={`project-type-badge project-type-badge--${
+                    project.projectType === 'Freelance' ? 'freelance' : 'personal'
+                  }`}
+                >
+                  <span className="type-dot" aria-hidden="true"></span>
+                  {project.projectType}
+                </span>
                 <span className="meta-pill">{project.category}</span>
                 <span className="meta-pill">{project.year}</span>
                 <span className="status-indicator">

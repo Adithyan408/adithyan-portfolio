@@ -6,12 +6,16 @@ export default function ProjectDetails() {
   const { id } = useParams<{ id: string }>()
   const navigate = useNavigate()
 
-  const projectIndex = projects.findIndex((p) => p.id === id)
-  const project = projectIndex !== -1 ? projects[projectIndex] : null
+  // Keep navigation consistent with the display order (last added project first)
+  const displayedProjects = [...projects].reverse()
+  const projectIndex = displayedProjects.findIndex((p) => p.id === id)
+  const project = projectIndex !== -1 ? displayedProjects[projectIndex] : null
 
   // Next project navigation helper
   const nextProject =
-    projectIndex !== -1 ? projects[(projectIndex + 1) % projects.length] : null
+    projectIndex !== -1
+      ? displayedProjects[(projectIndex + 1) % displayedProjects.length]
+      : null
 
   if (!project) {
     return (
@@ -40,6 +44,14 @@ export default function ProjectDetails() {
           <div className="details-icon" aria-hidden="true">
             {project.icon}
           </div>
+          <span
+            className={`project-type-badge project-type-badge--${
+              project.projectType === 'Freelance' ? 'freelance' : 'personal'
+            }`}
+          >
+            <span className="type-dot" aria-hidden="true"></span>
+            {project.projectType}
+          </span>
           <span className="details-pill">{project.category}</span>
           <span className="details-pill">{project.year}</span>
           <span className="details-pill">
@@ -159,6 +171,10 @@ export default function ProjectDetails() {
               <div className="sidebar-info-row">
                 <span className="sidebar-label">Category</span>
                 <span className="sidebar-val">{project.category}</span>
+              </div>
+              <div className="sidebar-info-row">
+                <span className="sidebar-label">Type</span>
+                <span className="sidebar-val">{project.projectType}</span>
               </div>
               <div className="sidebar-info-row">
                 <span className="sidebar-label">Current Status</span>

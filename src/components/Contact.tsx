@@ -4,12 +4,12 @@ import '../styles/Contact.css'
 
 // ✏️ Edit your details here.
 const info = {
-    email: 'adithyan.ks@example.com',
+    email: 'ksadithyan408@gmail.com',
     location: 'Kerala, India',
     availability: 'Open to full-time roles & freelance',
     responseTime: 'Replies within 24 hours',
     links: [
-        { label: 'GitHub', href: 'https://github.com/adithyanks' },
+        { label: 'GitHub', href: 'https://github.com/Adithyan408' },
         { label: 'LinkedIn', href: 'https://linkedin.com/in/adithyanks' },
     ],
     reasons: [
@@ -20,8 +20,8 @@ const info = {
     ],
 }
 
-// Optional form endpoint (e.g. 'https://formspree.io/f/xyz')
-const FORM_ENDPOINT = ''
+const FORM_ENDPOINT = 'https://api.web3forms.com/submit'
+const WEB3FORMS_ACCESS_KEY = 'cb509f23-2079-4f6b-8d69-90f01810656c'
 
 type Status = 'idle' | 'sending' | 'sent' | 'error'
 
@@ -49,9 +49,17 @@ export default function Contact() {
             const res = await fetch(FORM_ENDPOINT, {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
-                body: JSON.stringify(form),
+                body: JSON.stringify({
+                    access_key: WEB3FORMS_ACCESS_KEY,
+                    subject: `Portfolio Message from ${form.name}`,
+                    from_name: form.name,
+                    ...form,
+                }),
             })
-            if (!res.ok) throw new Error('Request failed')
+            const data = await res.json()
+            if (!res.ok || !data.success) {
+                throw new Error(data.message || 'Request failed')
+            }
             setStatus('sent')
             setForm({ name: '', email: '', message: '' })
         } catch {

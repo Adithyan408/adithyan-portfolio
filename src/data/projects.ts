@@ -12,6 +12,7 @@ export interface Project {
   year: string
   role: string
   status: 'Completed' | 'Active' | 'In Progress'
+  projectType: 'Freelance' | 'Personal Project'
   // Extra detailed fields for the Project Details page:
   longDescription: string
   keyFeatures: string[]
@@ -35,7 +36,8 @@ export const projects: Project[] = [
     category: 'Full-Stack Platform',
     year: '2024',
     role: 'Lead Full-Stack Engineer',
-    status: 'Active',
+    status: 'Completed',
+    projectType: 'Personal Project',
     longDescription:
       'Pulse Analytics was built to solve the performance and privacy bottlenecks of traditional client-side analytics trackers. Designed as an end-to-end telemetry system, it features an ultra-lightweight JavaScript tracking snippet (< 1.8KB) coupled with an ingestion pipeline that handles bursty web traffic without losing data points. The dashboard provides real-time event aggregation, geographic breakdowns, conversion funnels, and customizable alert rules.',
     keyFeatures: [
@@ -71,6 +73,7 @@ export const projects: Project[] = [
     year: '2024',
     role: 'Full-Stack Developer',
     status: 'Completed',
+    projectType: 'Personal Project',
     longDescription:
       'DevDock streamlines the onboarding and local testing process for multi-service microservice applications. Instead of configuring local environments manually, developers can spin up containerized development nodes in seconds, manage environment variables, and inspect network traffic between services through an intuitive browser interface.',
     keyFeatures: [
@@ -104,6 +107,7 @@ export const projects: Project[] = [
     year: '2023',
     role: 'Frontend & API Architect',
     status: 'Completed',
+    projectType: 'Freelance',
     longDescription:
       'Aura Commerce re-imagines the digital shopping experience with zero-friction interactions. Built with an offline-first state machine for shopping cart manipulation, it allows buyers to filter thousands of catalog items instantly with zero layout shifts, concluding with an authenticated Stripe payment flow.',
     keyFeatures: [
@@ -136,7 +140,8 @@ export const projects: Project[] = [
     category: 'Productivity Tool',
     year: '2023',
     role: 'Sole Creator',
-    status: 'Active',
+    status: 'Completed',
+    projectType: 'Personal Project',
     longDescription:
       'MarkdownFlow combines the speed of local desktop editors with the power of modern web collaboration. Built for engineers, technical writers, and students, it delivers split-view synchronized scrolling, math typesetting (KaTeX), Mermaid chart generation, and one-click PDF generation directly in the browser.',
     keyFeatures: [
