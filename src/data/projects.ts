@@ -1,8 +1,14 @@
+import pulseAnalyticsImg from '../assets/projects/pulse-analytics.jpg'
+import devdockCloudImg from '../assets/projects/devdock-cloud.jpg'
+import auraCommerceImg from '../assets/projects/aura-commerce.jpg'
+import markdownFlowImg from '../assets/projects/markdown-flow.jpg'
+
 export interface Project {
   id: string
   heading: string
   tagline: string
   description: string
+  image: string
   githubLink: string
   liveLink: string
   icon: string
@@ -28,6 +34,7 @@ export const projects: Project[] = [
     tagline: 'High-throughput real-time telemetry & user session analytics engine.',
     description:
       'A privacy-first analytics platform that aggregates web events, tracks user journeys, and renders interactive performance heatmaps with sub-second latency.',
+    image: pulseAnalyticsImg,
     githubLink: 'https://github.com/adithyanks/pulse-analytics',
     liveLink: 'https://pulse-analytics-demo.vercel.app',
     icon: '⚡',
@@ -64,6 +71,7 @@ export const projects: Project[] = [
     tagline: 'Instant developer environment manager and microservices playground.',
     description:
       'A developer tool for spawning isolated development sandboxes, managing local container configs, and previewing microservice architectures on demand.',
+    image: devdockCloudImg,
     githubLink: 'https://github.com/adithyanks/devdock-cloud',
     liveLink: 'https://devdock.io',
     icon: '📦',
@@ -98,6 +106,7 @@ export const projects: Project[] = [
     tagline: 'Headless e-commerce storefront with instantaneous search and Stripe checkout.',
     description:
       'An ultra-responsive modern storefront featuring optimistic cart updates, instant faceted search, multi-currency support, and secure checkout.',
+    image: auraCommerceImg,
     githubLink: 'https://github.com/adithyanks/aura-commerce',
     liveLink: 'https://aura-store-demo.vercel.app',
     icon: '🛍️',
@@ -132,6 +141,7 @@ export const projects: Project[] = [
     tagline: 'Collaborative real-time markdown editor with live preview & diagramming.',
     description:
       'A distraction-free web editor with collaborative editing, syntax highlighting, instant PDF export, and embedded Mermaid diagram rendering.',
+    image: markdownFlowImg,
     githubLink: 'https://github.com/adithyanks/markdown-flow',
     liveLink: 'https://markdownflow-demo.vercel.app',
     icon: '✍️',

@@ -45,9 +45,8 @@ export default function ProjectDetails() {
             {project.icon}
           </div>
           <span
-            className={`project-type-badge project-type-badge--${
-              project.projectType === 'Freelance' ? 'freelance' : 'personal'
-            }`}
+            className={`project-type-badge project-type-badge--${project.projectType === 'Freelance' ? 'freelance' : 'personal'
+              }`}
           >
             <span className="type-dot" aria-hidden="true"></span>
             {project.projectType}
@@ -98,8 +97,25 @@ export default function ProjectDetails() {
           )}
         </div>
 
+        {/* Project Screenshot Showcase Frame */}
+        <div className="details-preview-frame">
+          <div className="preview-browser-bar">
+            <span className="browser-dot dot--red"></span>
+            <span className="browser-dot dot--yellow"></span>
+            <span className="browser-dot dot--green"></span>
+            <span className="browser-address">
+              {project.liveLink ? project.liveLink.replace(/^https?:\/\//, '') : `${project.id}.app`}
+            </span>
+          </div>
+          <img
+            src={project.image}
+            alt={`${project.heading} application interface screenshot`}
+            className="details-preview-image"
+          />
+        </div>
+
         {/* Key Metrics / Highlights if present */}
-        {project.metrics && project.metrics.length > 0 && (
+        {/* {project.metrics && project.metrics.length > 0 && (
           <div className="details-metrics" aria-label="Project metrics">
             {project.metrics.map((metric) => (
               <div key={metric.label} className="metric-card">
@@ -108,7 +124,7 @@ export default function ProjectDetails() {
               </div>
             ))}
           </div>
-        )}
+        )} */}
       </header>
 
       {/* Main Body Section */}

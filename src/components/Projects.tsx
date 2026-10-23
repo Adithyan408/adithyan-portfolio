@@ -61,7 +61,17 @@ export default function Projects() {
               </div>
             </div>
 
-            {/* Card Content */}
+            {/* Project Screenshot */}
+            <div className="card-media">
+              <img
+                src={project.image}
+                alt={`${project.heading} screenshot`}
+                className="card-image"
+                loading="lazy"
+              />
+            </div>
+
+            {/* Card Content: Title & 2-4 lines about the project */}
             <div className="card-body">
               <div className="card-title-row">
                 <h2 className="card-heading">{project.heading}</h2>
@@ -70,7 +80,6 @@ export default function Projects() {
                 </span>
               </div>
 
-              <p className="card-tagline">{project.tagline}</p>
               <p className="card-description">{project.description}</p>
 
               {/* Technologies */}

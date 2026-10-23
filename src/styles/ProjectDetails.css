@@ -130,7 +130,69 @@
   display: flex;
   flex-wrap: wrap;
   gap: 1rem;
+  margin-bottom: 2.25rem;
+}
+
+/* Project Screenshot Showcase Frame */
+.details-preview-frame {
   margin-bottom: 2.5rem;
+  border-radius: 1.25rem;
+  overflow: hidden;
+  border: 2px solid var(--ink);
+  background: #111111;
+  box-shadow: 0 20px 40px -15px rgba(0, 0, 0, 0.2);
+}
+
+.preview-browser-bar {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.7rem 1.15rem;
+  background: #18181b;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.browser-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  display: inline-block;
+  flex-shrink: 0;
+}
+
+.dot--red {
+  background: #ff5f56;
+}
+
+.dot--yellow {
+  background: #ffbd2e;
+}
+
+.dot--green {
+  background: #27c93f;
+}
+
+.browser-address {
+  margin-left: 0.5rem;
+  font-size: 0.78rem;
+  color: rgba(255, 255, 255, 0.7);
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+  background: rgba(255, 255, 255, 0.08);
+  padding: 0.25rem 0.85rem;
+  border-radius: 999px;
+  max-width: 320px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.details-preview-image {
+  width: 100%;
+  height: auto;
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+  object-position: top center;
+  display: block;
 }
 
 /* Metrics Section */
