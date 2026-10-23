@@ -1,7 +1,7 @@
 import pulseAnalyticsImg from '../assets/projects/pulse-analytics.jpg'
 import devdockCloudImg from '../assets/projects/devdock-cloud.jpg'
 import auraCommerceImg from '../assets/projects/aura-commerce.jpg'
-import markdownFlowImg from '../assets/projects/markdown-flow.jpg'
+import readnestImg from '../assets/projects/readnestImg.png'
 
 export interface Project {
   id: string
@@ -22,7 +22,7 @@ export interface Project {
   // Extra detailed fields for the Project Details page:
   longDescription: string
   keyFeatures: string[]
-  challenges: string
+  challenges: string[]
   architecture: string
   metrics?: { label: string; value: string }[]
 }
@@ -54,8 +54,8 @@ export const projects: Project[] = [
       'Cookieless visitor tracking adhering to GDPR and CCPA privacy standards',
       'Role-based access control with granular API key management',
     ],
-    challenges:
-      'Handling high-frequency incoming event bursts while maintaining real-time dashboard updates required careful database indexing, batch insertion queues in Node.js, and debounced WebSocket broadcasts to prevent client browser lag.',
+    challenges:[
+      'Handling high-frequency incoming event bursts while maintaining real-time dashboard updates required careful database indexing, batch insertion queues in Node.js, and debounced WebSocket broadcasts to prevent client browser lag.'],
     architecture:
       'Micro-service architecture with a Node.js ingestion gateway, Redis caching buffer, PostgreSQL persistent time-series storage, and a React + Vite dashboard consuming normalized REST and WebSocket endpoints.',
     metrics: [
@@ -90,8 +90,9 @@ export const projects: Project[] = [
       'Integrated GraphQL playground for inspecting and testing service mesh schemas',
       'Workspace state export to Docker Compose and Kubernetes manifests',
     ],
-    challenges:
+    challenges:[
       'Interfacing directly with daemon container sockets securely while rendering live terminal streams in the browser required robust WebSocket multiplexing and strict authentication guards.',
+    ],
     architecture:
       'React frontend connected to an Express/Node.js orchestration server utilizing the Docker Engine API and WebSocket streams for real-time terminal and container control.',
     metrics: [
@@ -125,8 +126,9 @@ export const projects: Project[] = [
       'Stripe Elements integration supporting Apple Pay, Google Pay, and cards',
       'Responsive product detail view with image zoom and inventory tracking',
     ],
-    challenges:
+    challenges:[
       'Preventing race conditions during rapid cart item additions and stock validation required optimistic concurrency tokens and transactional inventory reservations.',
+    ],
     architecture:
       'Headless architecture with React frontend communicating with Node.js REST services, webhook validation handlers for Stripe, and cached CDN asset delivery.',
     metrics: [
@@ -136,34 +138,37 @@ export const projects: Project[] = [
     ],
   },
   {
-    id: 'markdown-flow',
-    heading: 'MarkdownFlow',
-    tagline: 'Collaborative real-time markdown editor with live preview & diagramming.',
+    id: 'readnest',
+    heading: 'ReadNest',
+    tagline: 'An E-commerce Book selling application with Blogs',
     description:
-      'A distraction-free web editor with collaborative editing, syntax highlighting, instant PDF export, and embedded Mermaid diagram rendering.',
-    image: markdownFlowImg,
-    githubLink: 'https://github.com/adithyanks/markdown-flow',
-    liveLink: 'https://markdownflow-demo.vercel.app',
+      'ReadNest is an e-commerce book-selling application integrated with a blogging platform, designed to build a community for readers and writers.',
+    image: readnestImg,
+    githubLink: 'https://github.com/adithyanks/readnest',
+    liveLink: 'https://www.readnest.shop/',
     icon: '✍️',
     coverColor: '#8b5cf6',
-    technologies: ['React', 'TypeScript', 'WebSockets', 'CSS Modules', 'Web Workers'],
-    category: 'Productivity Tool',
-    year: '2023',
-    role: 'Sole Creator',
+    technologies: ['EJS', 'Node', 'Express', 'MongoDB', 'CSS Modules'],
+    category: 'E-commerce ',
+    year: '2025',
+    role: 'Solo Creator',
     status: 'Completed',
     projectType: 'Personal Project',
     longDescription:
-      'MarkdownFlow combines the speed of local desktop editors with the power of modern web collaboration. Built for engineers, technical writers, and students, it delivers split-view synchronized scrolling, math typesetting (KaTeX), Mermaid chart generation, and one-click PDF generation directly in the browser.',
+      'ReadNest is an e-commerce book-selling application integrated with a blogging platform, designed to build a community for readers and writers. The platform allows users to explore and purchase books while also providing a space for readers to share their insights, experiences, and book reviews. It also enables writers to publish and share their stories, ideas, and creativity, helping them connect with readers and other writers.',
     keyFeatures: [
-      'Synchronized smooth scrolling between raw source and rendered HTML preview',
-      'Embedded Mermaid diagram generator and LaTeX mathematical formula support',
-      'Client-side print styling engine generating pristine PDF documents',
-      'Local storage auto-saving with full revision history and diff comparison',
+      'Online Bookstore: A platform to browse and purchase paperback, Kindle, and audiobook products with search, filters, wishlist, cart, and secure checkout.',
+      'Blogging & Reader Community: Enables readers to share book reviews and reading experiences, while writers can publish stories, ideas, and creative content.',
+      'User & Order Management: Provides secure authentication, profile and address management, wallet functionality, order tracking, and return, refund, and payment retry workflows.',
+      'Admin Dashboard: Allows administrators to manage books, categories, banners, discount vouchers, and orders while monitoring store operations',
+      'Book Discovery & Reading Experience: Helps users discover books through categories, collections, languages, and formats, with multilingual support for Malayalam and English and audiobook voice preferences.'
     ],
-    challenges:
-      'Synchronizing scroll positions between variable-height raw code and variable-height rendered DOM nodes required an AST mapping algorithm executed in a Web Worker.',
+    challenges:[
+      'Challenge: Handling multiple payment methods, payment failures, retries, and maintaining consistent checkout data.',
+      'Solution: Implemented structured checkout session management with Razorpay, COD, and wallet payment flows, including payment retry handling.',
+    ],
     architecture:
-      'React state engine powered by unified/remark markdown parsing pipeline in a dedicated Web Worker to ensure 60fps typing without UI thread blocking.',
+      'ReadNest follows a layered client–server architecture with an MVC-based application structure, integrating e-commerce and blogging modules with MongoDB, caching/session support, and third-party payment and media services.',
     metrics: [
       { label: 'Typing Latency', value: '< 8ms' },
       { label: 'Active Users', value: '1,200+' },

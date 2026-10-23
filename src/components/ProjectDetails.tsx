@@ -163,10 +163,19 @@ export default function ProjectDetails() {
           )}
 
           {/* Technical Challenges & Solutions */}
-          {project.challenges && (
+          {project.challenges && project.challenges.length > 0 && (
             <section className="details-block">
               <h2>Technical Challenges & Solutions</h2>
-              <p>{project.challenges}</p>
+              <ul className="challenges-list">
+                {project.challenges.map((challenge, index) => (
+                  <li key={index} className="challenge-item">
+                    <span className="challenge-bullet" aria-hidden="true">
+                      •
+                    </span>
+                    <span>{challenge}</span>
+                  </li>
+                ))}
+              </ul>
             </section>
           )}
         </div>
