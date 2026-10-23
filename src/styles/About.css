@@ -180,6 +180,51 @@
   outline-offset: 3px;
 }
 
+/* Social Connect Icons (Small, Horizontally Aligned below Actions) */
+.landing-socials {
+  display: flex;
+  align-items: center;
+  gap: 0.65rem;
+  margin-top: clamp(0.9rem, 1.8vw, 1.25rem);
+}
+
+.social-icon-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  border: 1px solid var(--border-light);
+  background: rgba(17, 17, 17, 0.04);
+  color: var(--ink);
+  text-decoration: none;
+  cursor: pointer;
+  transition: background-color 0.2s ease, color 0.2s ease, border-color 0.2s ease, transform 0.15s ease, box-shadow 0.2s ease;
+}
+
+.social-icon-btn svg {
+  display: block;
+}
+
+.social-icon-btn:hover {
+  background: var(--ink);
+  color: var(--paper);
+  border-color: var(--ink);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.12);
+}
+
+.social-icon-btn:active {
+  transform: scale(0.95);
+}
+
+.social-icon-btn:focus-visible {
+  outline: 2px solid var(--ink);
+  outline-offset: 2px;
+}
+
+
 /* ==========================================================================
    Portrait Visual & Aspect Ratio Handling
    me.png is naturally 1792 x 2400 (aspect ratio: 3:4)
@@ -320,7 +365,8 @@
 /* Accessibility */
 @media (prefers-reduced-motion: reduce) {
   .btn,
-  .btn-arrow {
+  .btn-arrow,
+  .social-icon-btn {
     transition: none;
   }
 }
