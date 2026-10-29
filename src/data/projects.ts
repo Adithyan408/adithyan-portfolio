@@ -1,6 +1,6 @@
-import pulseAnalyticsImg from '../assets/projects/pulse-analytics.jpg'
-import devdockCloudImg from '../assets/projects/devdock-cloud.jpg'
-import auraCommerceImg from '../assets/projects/aura-commerce.jpg'
+import multiDbImg from '../assets/projects/multiDB.png'
+import readoneImg from '../assets/projects/readone.png'
+import lmsImg from '../assets/projects/lms-home.png'
 import readnestImg from '../assets/projects/readnestImg.png'
 
 export interface Project {
@@ -29,35 +29,38 @@ export interface Project {
 
 export const projects: Project[] = [
   {
-    id: 'pulse-analytics',
-    heading: 'Pulse Analytics',
-    tagline: 'High-throughput real-time telemetry & user session analytics engine.',
+    id: 'mutlidb',
+    heading: 'Multi-DB E-Commerce Application',
+    tagline: 'The Multi-DB E-Commerce Application is a Node.js and TypeScript backend built around Clean Architecture, Domain-Driven Design (DDD), and Command Query Responsibility Segregation (CQRS).',
     description:
-      'A privacy-first analytics platform that aggregates web events, tracks user journeys, and renders interactive performance heatmaps with sub-second latency.',
-    image: pulseAnalyticsImg,
-    githubLink: 'https://github.com/adithyanks/pulse-analytics',
-    liveLink: 'https://pulse-analytics-demo.vercel.app',
+      'A hands-on e-commerce project built to understand and implement multi-database integration using MySQL and MongoDB, with event-driven communication through an Event Bus. Focused on learning database synchronization, event handling, and CQRS architecture.',
+    image: multiDbImg,
+    githubLink: 'https://github.com/Adithyan408/Multi-DB-Ecom-Application',
+    liveLink: 'api-testing',
     icon: '⚡',
     coverColor: '#10b981',
-    technologies: ['React', 'TypeScript', 'Node.js', 'PostgreSQL', 'Tailwind CSS', 'Docker'],
+    technologies: ['TypeScript', 'Node.js', 'SQL', 'Prisma', 'Mongoose', 'JWT', 'Express'],
     category: 'Full-Stack Platform',
-    year: '2024',
-    role: 'Lead Full-Stack Engineer',
+    year: '2026',
+    role: 'Backend Engineer',
     status: 'Completed',
     projectType: 'Personal Project',
     longDescription:
-      'Pulse Analytics was built to solve the performance and privacy bottlenecks of traditional client-side analytics trackers. Designed as an end-to-end telemetry system, it features an ultra-lightweight JavaScript tracking snippet (< 1.8KB) coupled with an ingestion pipeline that handles bursty web traffic without losing data points. The dashboard provides real-time event aggregation, geographic breakdowns, conversion funnels, and customizable alert rules.',
+      'A hands-on e-commerce project built to understand and implement multi-database integration using MySQL and MongoDB, with event-driven communication through an Event Bus. Focused on learning database synchronization, event handling, and CQRS architecture. A hands-on e-commerce project exploring multi-database integration using MySQL for transactional data and MongoDB for product catalog reads. Implemented event-driven synchronization through an Event Bus to keep both databases updated, gaining practical experience with polyglot persistence and CQRS architecture.',
     keyFeatures: [
-      'Lightweight client library (< 2KB gzip) with zero third-party dependencies',
-      'Real-time streaming ingestion pipeline built on Node.js and PostgreSQL',
-      'Custom interactive funnel analysis and page drop-off charts',
-      'Cookieless visitor tracking adhering to GDPR and CCPA privacy standards',
-      'Role-based access control with granular API key management',
+      'Implemented secure authentication with bcrypt password hashing, JWT access tokens, and rotating refresh tokens.',
+      'Applied CQRS to separate product write operations in MySQL from read operations in MongoDB.',
+      'Implemented event-driven database synchronization using Domain Events and an Event Bus.',
+      'Built product catalog APIs for listing and retrieving products using MongoDB read models.',
+      'Developed shopping cart management with quantity handling and atomic database transactions.',
+      'Applied Clean Architecture, SOLID principles, and dependency injection for modular, maintainable code.'
     ],
     challenges:[
-      'Handling high-frequency incoming event bursts while maintaining real-time dashboard updates required careful database indexing, batch insertion queues in Node.js, and debounced WebSocket broadcasts to prevent client browser lag.'],
+      'Challenge: Keeping MySQL and MongoDB synchronized without creating tight coupling between database operations.',
+      'Solution: Implemented CQRS with Domain Events and an Event Bus to decouple write operations from MongoDB read-model updates and synchronize product data.',  
+    ],
     architecture:
-      'Micro-service architecture with a Node.js ingestion gateway, Redis caching buffer, PostgreSQL persistent time-series storage, and a React + Vite dashboard consuming normalized REST and WebSocket endpoints.',
+      'The project follows Clean Architecture with four layers: Domain, Application, Infrastructure, and Presentation, keeping business logic independent of databases and frameworks. It also uses CQRS to separate write operations in MySQL from read operations in MongoDB, with an Event Bus handling data synchronization.',
     metrics: [
       { label: 'Payload Size', value: '1.8 KB' },
       { label: 'Event Ingestion', value: '10k+ req/sec' },
@@ -66,35 +69,37 @@ export const projects: Project[] = [
     ],
   },
   {
-    id: 'devdock-cloud',
-    heading: 'DevDock Cloud',
-    tagline: 'Instant developer environment manager and microservices playground.',
+    id: 'readone-blogs',
+    heading: 'ReadOne Blog App',
+    tagline: 'A React-based blog application with Firebase authentication and real-time data storage.',
     description:
-      'A developer tool for spawning isolated development sandboxes, managing local container configs, and previewing microservice architectures on demand.',
-    image: devdockCloudImg,
-    githubLink: 'https://github.com/adithyanks/devdock-cloud',
-    liveLink: 'https://devdock.io',
+      'A modern, responsive blogging platform built with React and Firebase, enabling writers to create, edit, and publish articles with a rich text editor and readers to discover and engage with content.',
+    image: readoneImg,
+    githubLink: 'https://github.com/Adithyan408/ReadOne-',
+    liveLink: 'https://read-one-blog.vercel.app/',
     icon: '📦',
     coverColor: '#3b82f6',
-    technologies: ['React', 'TypeScript', 'Node.js', 'Docker API', 'GraphQL', 'Express'],
-    category: 'Developer Tooling',
-    year: '2024',
-    role: 'Full-Stack Developer',
+    technologies: ['React', 'TypeScript', 'Vite', 'Tailwind CSS', 'Firebase Auth', 'Tip Tap','Git', 'GitHub'],
+    category: 'Blog App',
+    year: '2026',
+    role: 'React Developer',
     status: 'Completed',
     projectType: 'Personal Project',
     longDescription:
-      'DevDock streamlines the onboarding and local testing process for multi-service microservice applications. Instead of configuring local environments manually, developers can spin up containerized development nodes in seconds, manage environment variables, and inspect network traffic between services through an intuitive browser interface.',
+      'ReadOne is a modern, responsive full-stack blogging and content-publishing web application designed to empower writers and readers through a distraction-free digital storytelling experience. Built with a focus on speed, real-time interactivity, and clean typography, ReadOne enables creators to compose rich articles with an intuitive WYSIWYG editor while allowing readers to discover and engage with trending content. The application bridges seamless authoring and secure data persistence by pairing a component-driven React architecture with cloud-native serverless services.',
     keyFeatures: [
-      'One-click sandbox provisioning with pre-configured runtime templates',
-      'Real-time container logs streaming and resource consumption monitor',
-      'Integrated GraphQL playground for inspecting and testing service mesh schemas',
-      'Workspace state export to Docker Compose and Kubernetes manifests',
+      'Rich text editor with formatting tools and live word count',
+      'Google Sign-In and Email/Password authentication',
+      'User profiles and author-based edit and delete permissions',
+      'Protected routes for authenticated users',
+      'Lazy loading for improved application performance'
     ],
     challenges:[
       'Interfacing directly with daemon container sockets securely while rendering live terminal streams in the browser required robust WebSocket multiplexing and strict authentication guards.',
+      'Solution: Implemented content equality checks and controlled editor updates to prevent redundant re-renders and cursor resets, while ensuring clean editor resets when switching between creating and editing blogs.'
     ],
     architecture:
-      'React frontend connected to an Express/Node.js orchestration server utilizing the Docker Engine API and WebSocket streams for real-time terminal and container control.',
+      'ReadOne follows a serverless SPA architecture built with React 19, TypeScript, Vite, and Tailwind CSS. Firebase Authentication handles user authentication, while Cloud Firestore manages data storage and real-time updates. React Context API manages authentication state, and React Router v7 handles navigation and protected routes.',
     metrics: [
       { label: 'Startup Time', value: '< 2.4s' },
       { label: 'Templates', value: '15+ Runtimes' },
@@ -102,35 +107,39 @@ export const projects: Project[] = [
     ],
   },
   {
-    id: 'aura-commerce',
-    heading: 'Aura Commerce',
-    tagline: 'Headless e-commerce storefront with instantaneous search and Stripe checkout.',
-    description:
-      'An ultra-responsive modern storefront featuring optimistic cart updates, instant faceted search, multi-currency support, and secure checkout.',
-    image: auraCommerceImg,
-    githubLink: 'https://github.com/adithyanks/aura-commerce',
-    liveLink: 'https://aura-store-demo.vercel.app',
+    id: 'library-management',
+    heading: 'Library Management System',
+    tagline: 'A web application managing Library operations',
+    description: 
+            'A web application managing library operations',
+    image: lmsImg,
+    githubLink: 'https://github.com/Adithyan408/lms-client',
+    liveLink: 'public-library',
     icon: '🛍️',
     coverColor: '#f59e0b',
-    technologies: ['React', 'TypeScript', 'Node.js', 'Stripe API', 'Tailwind CSS', 'REST API'],
-    category: 'E-Commerce & Web App',
-    year: '2023',
-    role: 'Frontend & API Architect',
+    technologies: ['React', 'TypeScript', 'Node.js', 'Tailwind CSS', 'REST API', 'MongoDB', 'Express', 'Git', 'GitHub', 'Firebase Auth'],
+    category: 'Management System',
+    year: '2026',
+    role: 'FullStack Developer',
     status: 'Completed',
     projectType: 'Freelance',
     longDescription:
-      'Aura Commerce re-imagines the digital shopping experience with zero-friction interactions. Built with an offline-first state machine for shopping cart manipulation, it allows buyers to filter thousands of catalog items instantly with zero layout shifts, concluding with an authenticated Stripe payment flow.',
+      'Developed a full-stack Library Management System collaboratively with a team of 3 contributors, focusing on building a practical library solution while following an organized, team-based development workflow. The project\'s main vision was to strengthen collaboration through effective Git and GitHub practices, including task assignment, issue tracking, progress monitoring, pull requests, code reviews, merging, and conflict resolution. This helped maintain code quality, coordinate contributions, and deliver features efficiently as a team.',
     keyFeatures: [
-      'Sub-50ms instant client-side catalog filtering and search index',
-      'Optimistic cart updates with seamless sync to persistent server sessions',
-      'Stripe Elements integration supporting Apple Pay, Google Pay, and cards',
-      'Responsive product detail view with image zoom and inventory tracking',
+      'Separate Admin and User portals with role-based access.',
+      'ISBN scanner integration with Open Library and Google Books APIs to automatically fetch book details and simplify book entry.',
+      'Book borrowing, returns, loan tracking, and borrowing history.',
+      'Book inventory management with physical copy tracking and shelf locations.',
+      'Search and filter books by category, language, publisher, and availability.',
+      'Admin dashboard with book, author, publisher, and user management.',
+      'User dashboard with borrowing statistics and active loans.',
+      'Google Sign-In for users and secure credential-based Admin login.'
     ],
     challenges:[
-      'Preventing race conditions during rapid cart item additions and stock validation required optimistic concurrency tokens and transactional inventory reservations.',
+      'Challenge: Coordinating development among 3 contributors and managing code conflicts.',' Solution: Used Git and GitHub for issue assignment, progress tracking, pull requests, code reviews, merging, and conflict resolution.',
     ],
     architecture:
-      'Headless architecture with React frontend communicating with Node.js REST services, webhook validation handlers for Stripe, and cached CDN asset delivery.',
+      'Built with React 19, Vite, TypeScript, and React Router v7 on the frontend, and Node.js, Express, and MongoDB with Mongoose on the backend. Implemented REST APIs, role-based access control, and secure JWT authentication with httpOnly cookies and token refresh.',
     metrics: [
       { label: 'Checkout Conversion', value: '+24%' },
       { label: 'Page Load', value: '0.4s' },
