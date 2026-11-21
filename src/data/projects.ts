@@ -71,7 +71,7 @@ export const projects: Project[] = [
   {
     id: 'readone-blogs',
     heading: 'ReadOne Blog App',
-    tagline: 'A React-based blog application with Firebase authentication and real-time data storage.',
+    tagline: 'A React-based blog application with AI blog Companion.',
     description:
       'A modern, responsive blogging platform built with React and Firebase, enabling writers to create, edit, and publish articles with a rich text editor and readers to discover and engage with content.',
     image: readoneImg,
@@ -86,10 +86,12 @@ export const projects: Project[] = [
     status: 'Completed',
     projectType: 'Personal Project',
     longDescription:
-      'ReadOne is a modern, responsive full-stack blogging and content-publishing web application designed to empower writers and readers through a distraction-free digital storytelling experience. Built with a focus on speed, real-time interactivity, and clean typography, ReadOne enables creators to compose rich articles with an intuitive WYSIWYG editor while allowing readers to discover and engage with trending content. The application bridges seamless authoring and secure data persistence by pairing a component-driven React architecture with cloud-native serverless services.',
+      'ReadOne is a modern, responsive blogging and content-publishing web application designed to empower writers and readers through a distraction-free digital storytelling experience. Built with a focus on speed, real-time interactivity, and clean typography, ReadOne enables creators to compose rich articles using an intuitive WYSIWYG editor while allowing readers to discover and engage with trending content. The application also integrates AI-powered features, including an **AI Blog Companion** that helps readers understand, simplify, and translate blog content, along with **AI-powered grammar assistance** for identifying spelling mistakes and correcting grammatical errors. ReadOne bridges seamless content creation and secure data persistence through a component-driven React architecture and cloud-native serverless services.',
     keyFeatures: [
       'Rich text editor with formatting tools and live word count',
       'Google Sign-In and Email/Password authentication',
+      'An AI-powered assistant that helps readers understand, simplify, summarize, and translate blog content for a better reading experience.',
+      'Identifies spelling mistakes, corrects grammatical errors, and improves sentence clarity to help writers create polished, error-free content.',
       'User profiles and author-based edit and delete permissions',
       'Protected routes for authenticated users',
       'Lazy loading for improved application performance'
