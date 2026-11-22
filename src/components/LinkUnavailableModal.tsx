@@ -98,7 +98,7 @@ export default function LinkUnavailableModal({
 
         <div className="unavailable-modal-notice-box">
           <p id="unavailable-modal-desc" className="unavailable-modal-desc">
-            Link is not available due to privacy issues or other technical problems. If you want, connect the author.
+            This link is currently unavailable due to privacy restrictions or a technical issue. If possible, please contact the author to request access.
           </p>
         </div>
 
