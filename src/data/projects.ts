@@ -86,7 +86,7 @@ export const projects: Project[] = [
     status: 'Completed',
     projectType: 'Personal Project',
     longDescription:
-      'ReadOne is a modern, responsive blogging and content-publishing web application designed to empower writers and readers through a distraction-free digital storytelling experience. Built with a focus on speed, real-time interactivity, and clean typography, ReadOne enables creators to compose rich articles using an intuitive WYSIWYG editor while allowing readers to discover and engage with trending content. The application also integrates AI-powered features, including an **AI Blog Companion** that helps readers understand, simplify, and translate blog content, along with **AI-powered grammar assistance** for identifying spelling mistakes and correcting grammatical errors. ReadOne bridges seamless content creation and secure data persistence through a component-driven React architecture and cloud-native serverless services.',
+      'ReadOne is a modern, responsive blogging and content-publishing web application designed to empower writers and readers through a distraction-free digital storytelling experience. Built with a focus on speed, real-time interactivity, and clean typography, ReadOne enables creators to compose rich articles using an intuitive WYSIWYG editor while allowing readers to discover and engage with trending content. The application also integrates AI-powered features, including an AI Blog Companion that helps readers understand, simplify, and translate blog content, along with AI-powered grammar assistance for identifying spelling mistakes and correcting grammatical errors. ReadOne bridges seamless content creation and secure data persistence through a component-driven React architecture and cloud-native serverless services.',
     keyFeatures: [
       'Rich text editor with formatting tools and live word count',
       'Google Sign-In and Email/Password authentication',
@@ -110,10 +110,10 @@ export const projects: Project[] = [
   },
   {
     id: 'library-management',
-    heading: 'Library Management System',
-    tagline: 'A web application managing Library operations',
+    heading: 'AI Powered Library Management System',
+    tagline: 'An AI-powered web application for managing library operations, automating book categorization, and recommending optimal shelf locations using similarity algorithms',
     description: 
-            'A web application managing library operations',
+            'An AI-powered web application for managing library operations, automating book categorization, and recommending optimal shelf locations using similarity algorithms',
     image: lmsImg,
     githubLink: 'https://github.com/Adithyan408/lms-client',
     liveLink: '',
@@ -126,12 +126,14 @@ export const projects: Project[] = [
     status: 'Completed',
     projectType: 'Freelance',
     longDescription:
-      'Developed a full-stack Library Management System collaboratively with a team of 3 contributors, focusing on building a practical library solution while following an organized, team-based development workflow. The project\'s main vision was to strengthen collaboration through effective Git and GitHub practices, including task assignment, issue tracking, progress monitoring, pull requests, code reviews, merging, and conflict resolution. This helped maintain code quality, coordinate contributions, and deliver features efficiently as a team.',
+      'Developed a full-stack Library Management System collaboratively with a team of 3 contributors, focusing on building a practical library solution while following an organized, team-based development workflow. Implemented AI-powered shelf detection using similarity algorithms to recommend suitable shelf locations for books, improving inventory organization. The project also emphasized effective Git and GitHub practices, including task assignment, issue tracking, progress monitoring, pull requests, code reviews, merging, and conflict resolution. This helped maintain code quality, coordinate contributions, and deliver features efficiently as a team.',
     keyFeatures: [
       'Separate Admin and User portals with role-based access.',
       'ISBN scanner integration with Open Library and Google Books APIs to automatically fetch book details and simplify book entry.',
       'Book borrowing, returns, loan tracking, and borrowing history.',
+      'Automatically identifies the most suitable shelf location for books using similarity algorithms and AI-based recommendations.',
       'Book inventory management with physical copy tracking and shelf locations.',
+      'Generate monthly and quarterly book transaction reports with PDF download functionality for easy record-keeping and analysis',
       'Search and filter books by category, language, publisher, and availability.',
       'Admin dashboard with book, author, publisher, and user management.',
       'User dashboard with borrowing statistics and active loans.',

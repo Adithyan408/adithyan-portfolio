@@ -7,7 +7,7 @@ const profile = {
     role: 'Software Engineer',
     headline: 'I build fast, reliable software for the web.',
     about:
-        "I'm a software engineer crafting full-stack web applications with an emphasis on clean architecture, performance, and intuitive user experiences. Passionate about turning complex ideas into elegant, reliable code.",
+        "I'm a software engineer crafting full-stack web applications with an emphasis on clean architecture, performance, and intuitive user experiences. Passionate about turning complex ideas into elegant, reliable solutions. Currently exploring AI tools, emerging technologies, and their integration into existing and new applications to automate tasks, simplify workflows, and reduce human effort.",
     details: [
         { label: 'Focus', value: 'Full-Stack (React, TypeScript, Node.js)' },
         { label: 'Experience', value: ' Building Web Systems' },
