@@ -9,8 +9,8 @@ export interface Project {
   tagline: string
   description: string
   image: string
-  githubLink: string
-  liveLink: string
+  githubLink?: string
+  liveLink?: string
   icon: string
   coverColor: string
   technologies: string[]
@@ -36,7 +36,7 @@ export const projects: Project[] = [
       'A hands-on e-commerce project built to understand and implement multi-database integration using MySQL and MongoDB, with event-driven communication through an Event Bus. Focused on learning database synchronization, event handling, and CQRS architecture.',
     image: multiDbImg,
     githubLink: 'https://github.com/Adithyan408/Multi-DB-Ecom-Application',
-    liveLink: 'api-testing',
+    liveLink: '',
     icon: '⚡',
     coverColor: '#10b981',
     technologies: ['TypeScript', 'Node.js', 'SQL', 'Prisma', 'Mongoose', 'JWT', 'Express'],
@@ -116,7 +116,7 @@ export const projects: Project[] = [
             'A web application managing library operations',
     image: lmsImg,
     githubLink: 'https://github.com/Adithyan408/lms-client',
-    liveLink: 'public-library',
+    liveLink: '',
     icon: '🛍️',
     coverColor: '#f59e0b',
     technologies: ['React', 'TypeScript', 'Node.js', 'Tailwind CSS', 'REST API', 'MongoDB', 'Express', 'Git', 'GitHub', 'Firebase Auth'],

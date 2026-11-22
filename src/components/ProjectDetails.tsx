@@ -1,10 +1,35 @@
+import { useState } from 'react'
 import { useParams, Link, useNavigate } from 'react-router-dom'
 import { projects } from '../data/projects'
+import LinkUnavailableModal from './LinkUnavailableModal'
+import { isValidUrl } from '../utils/url'
 import '../styles/ProjectDetails.css'
 
 export default function ProjectDetails() {
   const { id } = useParams<{ id: string }>()
   const navigate = useNavigate()
+
+  const [modalState, setModalState] = useState<{
+    isOpen: boolean
+    linkType: string
+    projectName: string
+  }>({
+    isOpen: false,
+    linkType: 'Link',
+    projectName: '',
+  })
+
+  const handleOpenUnavailable = (linkType: string, projectName: string) => {
+    setModalState({
+      isOpen: true,
+      linkType,
+      projectName,
+    })
+  }
+
+  const handleCloseModal = () => {
+    setModalState((prev) => ({ ...prev, isOpen: false }))
+  }
 
   // Keep navigation consistent with the display order (last added project first)
   const displayedProjects = [...projects].reverse()
@@ -73,7 +98,7 @@ export default function ProjectDetails() {
 
         {/* Action Buttons: Live Demo & GitHub */}
         <div className="details-actions">
-          {project.liveLink && (
+            { isValidUrl(project.liveLink) ? (
             <a
               href={project.liveLink}
               target="_blank"
@@ -83,8 +108,18 @@ export default function ProjectDetails() {
               <span>View Live Demo</span>
               <span aria-hidden="true">↗</span>
             </a>
+          ) : (
+            <button
+              type="button"
+              className="btn btn--solid"
+              onClick={() => handleOpenUnavailable('Live Demo', project.heading)}
+            >
+              <span>View Live Demo</span>
+              <span aria-hidden="true">↗</span>
+            </button>
           )}
-          {project.githubLink && (
+
+            { isValidUrl(project.githubLink) ? (
             <a
               href={project.githubLink}
               target="_blank"
@@ -94,6 +129,15 @@ export default function ProjectDetails() {
               <span>View Source on GitHub</span>
               <span aria-hidden="true">↗</span>
             </a>
+          ) : (
+            <button
+              type="button"
+              className="btn btn--outline"
+              onClick={() => handleOpenUnavailable('GitHub', project.heading)}
+            >
+              <span>View Source on GitHub</span>
+              <span aria-hidden="true">↗</span>
+            </button>
           )}
         </div>
 
@@ -104,7 +148,9 @@ export default function ProjectDetails() {
             <span className="browser-dot dot--yellow"></span>
             <span className="browser-dot dot--green"></span>
             <span className="browser-address">
-              {project.liveLink ? project.liveLink.replace(/^https?:\/\//, '') : `${project.id}.app`}
+              {isValidUrl(project.liveLink)
+                ? project.liveLink!.replace(/^https?:\/\//, '')
+                : `${project.id}.app`}
             </span>
           </div>
           <img
@@ -236,6 +282,14 @@ export default function ProjectDetails() {
           </button>
         )}
       </footer>
+
+      {/* Unavailable Link Popup Modal */}
+      <LinkUnavailableModal
+        isOpen={modalState.isOpen}
+        onClose={handleCloseModal}
+        linkType={modalState.linkType}
+        projectName={modalState.projectName}
+      />
     </article>
   )
 }

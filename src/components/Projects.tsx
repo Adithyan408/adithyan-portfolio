@@ -1,11 +1,36 @@
+import { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { projects } from '../data/projects'
+import LinkUnavailableModal from './LinkUnavailableModal'
+import { isValidUrl } from '../utils/url'
 import '../styles/Projects.css'
 
 export default function Projects() {
   const navigate = useNavigate()
   // Show the last added project first
   const displayedProjects = [...projects].reverse()
+
+  const [modalState, setModalState] = useState<{
+    isOpen: boolean
+    linkType: string
+    projectName: string
+  }>({
+    isOpen: false,
+    linkType: 'Link',
+    projectName: '',
+  })
+
+  const handleOpenUnavailable = (linkType: string, projectName: string) => {
+    setModalState({
+      isOpen: true,
+      linkType,
+      projectName,
+    })
+  }
+
+  const handleCloseModal = () => {
+    setModalState((prev) => ({ ...prev, isOpen: false }))
+  }
 
   return (
     <div className="projects-page">
@@ -45,9 +70,8 @@ export default function Projects() {
               </div>
               <div className="card-meta">
                 <span
-                  className={`project-type-badge project-type-badge--${
-                    project.projectType === 'Freelance' ? 'freelance' : 'personal'
-                  }`}
+                  className={`project-type-badge project-type-badge--${project.projectType === 'Freelance' ? 'freelance' : 'personal'
+                    }`}
                 >
                   <span className="type-dot" aria-hidden="true"></span>
                   {project.projectType}
@@ -102,7 +126,7 @@ export default function Projects() {
               </span>
 
               <div className="card-links">
-                {project.githubLink && (
+                  { isValidUrl(project.githubLink) ? (
                   <a
                     href={project.githubLink}
                     target="_blank"
@@ -114,8 +138,22 @@ export default function Projects() {
                     <span>GitHub</span>
                     <span aria-hidden="true">↗</span>
                   </a>
+                ) : (
+                  <button
+                    type="button"
+                    className="icon-link-btn"
+                    onClick={(e) => {
+                      e.stopPropagation()
+                      handleOpenUnavailable('GitHub', project.heading)
+                    }}
+                    aria-label={`GitHub link unavailable for ${project.heading}`}
+                  >
+                    <span>GitHub</span>
+                    <span aria-hidden="true">↗</span>
+                  </button>
                 )}
-                {project.liveLink && (
+
+                  { isValidUrl(project.liveLink) ? (
                   <a
                     href={project.liveLink}
                     target="_blank"
@@ -127,12 +165,33 @@ export default function Projects() {
                     <span>Live Demo</span>
                     <span aria-hidden="true">↗</span>
                   </a>
+                ) : (
+                  <button
+                    type="button"
+                    className="icon-link-btn"
+                    onClick={(e) => {
+                      e.stopPropagation()
+                      handleOpenUnavailable('Live Demo', project.heading)
+                    }}
+                    aria-label={`Live demo unavailable for ${project.heading}`}
+                  >
+                    <span>Live Demo</span>
+                    <span aria-hidden="true">↗</span>
+                  </button>
                 )}
               </div>
             </div>
           </article>
         ))}
       </div>
+
+      {/* Unavailable Link Popup Modal */}
+      <LinkUnavailableModal
+        isOpen={modalState.isOpen}
+        onClose={handleCloseModal}
+        linkType={modalState.linkType}
+        projectName={modalState.projectName}
+      />
     </div>
   )
 }

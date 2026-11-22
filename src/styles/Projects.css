@@ -316,6 +316,9 @@
   color: var(--ink);
   background: transparent;
   transition: background-color 0.15s ease, color 0.15s ease;
+  font-family: inherit;
+  cursor: pointer;
+  line-height: inherit;
 }
 
 .icon-link-btn:hover {
